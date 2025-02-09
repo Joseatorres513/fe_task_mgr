@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Delete Task{% endblock title %Task}
+
+{% block content %}
+<h1>Delete Task</h1>
+<p>Are you sure you want to delete thsi task?</p>
+<pre>Name: {{ task["name] }}</pre>
+<pre>Summary: {{ task["summary"] }}</pre>
+<form method="POST" action="{{ url_for('delete_task', pk-task['id']) }}">
+    <input type="submit" class="btn btn-danger" value="Confirm">
+</form>
+{% endblock content %}

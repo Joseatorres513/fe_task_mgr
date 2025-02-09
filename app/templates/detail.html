@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ task["name"] }}{% endblock title %}
+
+{% block title %}
+<h1>{{ task["name"] }}</h1>
+<small>Is Done: {{ task["is_done"] }}</small>
+<h3>{{ task["summary"] }}</h3>
+<p>{{ task["body"] }}</p>
+<p>
+    <a class="btn btn-primary" href="{{ url_for('get_edit_form', pk=task['id']) }}">Edit</a>
+</p>
+<p>
+    <a class="btn btn-danger" href="{{ url_for('get_delete_form', pk=task['id]) }}">Delete</a>
+</p>
+{% endblock content %}
